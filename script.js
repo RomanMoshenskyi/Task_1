@@ -16,16 +16,16 @@ accordionItems.forEach(item => {
 });
 
 function sendMessage(event) {
-    if (event) event.preventDefault(); // Запобігає перезавантаженню форми
+    if (event) event.preventDefault(); 
 
     // Очищення полів вводу
     document.querySelectorAll('.input-field').forEach(field => field.value = '');
 
-    // Показ повідомлення (викликатиметься один раз)
+    // Показ повідомлення 
     alert('Message sent');
 }
 
-// Якщо викликається з кнопки, додайте `event.preventDefault()`
+
 document.querySelector('.send-button')?.addEventListener('click', sendMessage);
 
 

@@ -3,40 +3,40 @@ body {
   height: 8500px;
   background: #E4F2FB;
 }
-
+/*MENU SECTION*/
 .menu {
   position: absolute;
-  width: 46px; /* Initial width - enough for the icon */
-  height: 1105px;  /*  Consider using max-height and overflow-y: auto;  if content might exceed this */
+  width: 46px; 
+  height: 1105px;  
   top: 114px;
   left:300px;
-  background-color: transparent; /*  Make the background match the body */
-  transition: width 0.3s ease; /* Smooth transition for width change */
-  overflow: hidden; /* Hide content that overflows when collapsed */
+  background-color: transparent; 
+  transition: width 0.3s ease; 
+  overflow: hidden; 
 }
 
 .menu.open {
-  width: 300px; /* Expanded width */
+  width: 300px; 
 }
 
 
 .menu-icon {
-  position: absolute; /*  Absolute position within the menu */
+  position: absolute; 
   width: 30px;
   height: 20px;
-  left: 8px; /* Adjust left position to center icon */
-  cursor: pointer; /* Change cursor to indicate clickability */
+  left: 8px;
+  cursor: pointer; 
 }
 
 .line {
     
-    height: 4px; /*  Height of the lines */
+    height: 4px; 
     background-color: #052123;
     margin: 5px 0;  
     transition: 0.3s; 
 }
 .line1 {
-  width: 25px; /*  Width of the lines */
+  width: 25px; 
 }
 .line2 {
   width: 16.25px;
@@ -45,17 +45,16 @@ body {
   width: 30px;
 }
 
-/*  Styles for open/close icon animation */
 .menu.open .line1 {
-  transform: rotate(-45deg) translate(-7px, 7px); /* Rotate and position for "X" */
+  transform: rotate(-45deg) translate(-7px, 7px); 
 }
 
 .menu.open .line2 {
-  opacity: 0; /* Hide the middle line */
+  opacity: 0; 
 }
 
 .menu.open .line3 {
-  transform: rotate(45deg) translate(-6px, -6px);  /* Rotate and position for "X" */
+  transform: rotate(45deg) translate(-6px, -6px); 
 }
 
 
@@ -64,8 +63,8 @@ body {
   width: 180px;
   height: 31px;
   top: 150px;
-  left: calc(50% - 15px/2); /* Use calc() to center relative to ICON */
-  font-family: 'Montserrat', sans-serif; /* Add sans-serif as fallback */
+  left: calc(50% - 15px/2); 
+  font-family: 'Montserrat', sans-serif; 
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -74,13 +73,13 @@ body {
   letter-spacing: 5px;
   color: #00042D;
   transform: rotate(-90deg);
-    white-space: nowrap;  /* Prevent text wrapping */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease, left 0.3s ease;  /* Smooth transition for visibility */
+    white-space: nowrap;  
+    opacity: 0; 
+    transition: opacity 0.3s ease, left 0.3s ease;  
 }
 .menu.open .menu-name {
-    left: -67.5px; /* Adjust left position for when menu open*/
-    opacity: 1; /* Fully visible when open */
+    left: -67.5px;
+    opacity: 1; 
 }
 
 
@@ -88,9 +87,9 @@ body {
   position: absolute;
   width: 559px;
   height: 46px;
-  left: calc(50% - 180px/2); /* Use calc to center horizontally */
+  left: calc(50% - 180px/2); 
   top: 730px;
-  font-family: 'Montserrat', sans-serif;  /* Add sans-serif as fallback */
+  font-family: 'Montserrat', sans-serif; 
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -99,14 +98,14 @@ body {
   letter-spacing: 5px;
   color: #00042D;
   transform: rotate(-90deg);
-  white-space: nowrap; /*  Prevent wrapping to new lines*/
+  white-space: nowrap; 
   opacity: 0;
-  transition: opacity 0.3s ease, left 0.3s ease;  /* Smooth transition*/
+  transition: opacity 0.3s ease, left 0.3s ease; 
 }
 
 .menu.open .social-links{
     opacity:1;
-    left: -250px; /*Adjust the position when menu opens*/
+    left: -250px; 
 }
 
 .social-links a {
@@ -273,14 +272,11 @@ height: 2.25px;
 background: #00042D;
 transform: rotate(90deg);
 
-
 flex: none;
 order: 1;
 flex-grow: 0;
-
-margin-left: -48px;  /* Зсуває лінію вліво */
-/* margin-top: 40px; - Додаємо відступ зверху, щоб вирівняти з текстом */
-position: relative; /* Дозволяє використовувати top/left */
+margin-left: -48px;  
+position: relative; 
 top: -25px;
 
   
@@ -301,14 +297,13 @@ top: -25px;
   color: #00042D;
   
   
-  /* Inside auto layout */
   flex: none;
   order: 2;
   flex-grow: 0;
 }
 .about .first-line {
-  display: block; /* Розміщує перший рядок на окремому рядку */
-  margin-bottom: 20px; /* Відступ між першим рядком і наступним текстом */
+  display: block; 
+  margin-bottom: 20px; 
 }
 .about .second-line {
   display: block;
@@ -446,63 +441,57 @@ top: -25px;
  }
  
  .accordion-title {
-   /* Title */
    display: flex;
    flex-direction: row;
-   align-items: center; /*  Better vertical alignment */
-   justify-content: space-between; /*  Push title and icon to the edges */
+   align-items: center; 
+   justify-content: space-between; 
    padding: 0px;
-   width: 100%; /*  Take full width */
-   cursor: pointer; /* Indicate clickability */
+   width: 100%; 
+   cursor: pointer; 
  
    
  }
  
  .accordion-title h3 {
-   /* Team Leader */
    font-family: 'Montserrat', sans-serif;
    font-style: normal;
    font-weight: 600;
    font-size: 20px;
    line-height: 30px;
    color: #00042D;
-   margin: 0; /* Remove default h3 margins */
+   margin: 0; 
  
   
  }
  
  .accordion-title span {
-   /* - or + */
    font-family: 'Montserrat', sans-serif;
    font-style: normal;
    font-weight: 600;
    font-size: 20px;
    line-height: 30px;
    color: #00042D;
-   margin-left: 10px; /*  Some space between text and icon */
+   margin-left: 10px; 
  }
  
  .accordion-content {
-   /* Description */
-   width: 100%; /* Full width */
+
+   width: 100%;
    font-family: 'Montserrat', sans-serif;
    font-style: normal;
-   font-weight: 400; /*  Changed to 400 for normal text */
+   font-weight: 400;
    font-size: 16px;
    line-height: 30px;
    color: #00042D;
-   overflow: hidden; /*  Crucial for hiding */
-   max-height: 0;    /*  Initially hidden */
-   transition: max-height 0.3s ease; /* Smooth transition */
+   overflow: hidden;
+   max-height: 0;   
+   transition: max-height 0.3s ease; 
  }
  
- /*  Class to show the content */
  .accordion-item.active .accordion-content {
   max-height: 240px;
   margin-bottom: 5px;
- /*  Set a reasonable maximum height */
  }
- /* Change plus to minus when active */
  .accordion-item.active .accordion-title span:before {
  content: "-";
  }
@@ -510,7 +499,7 @@ top: -25px;
  content:"+";
  }
 
- /* Portfolio */
+
 
 .portfolio-container {
   display: flex;
@@ -568,7 +557,6 @@ top: -25px;
   background: #FFFFFF;
   transform: rotate(90deg);
 
-  /* Inside auto layout */
   flex: none;
   order: 1;
   position: relative;
@@ -614,9 +602,9 @@ top: -25px;
   height: 220px;
   
   
-  background: url(/img/Rectangle\ 268.png); /* Replace with your actual image path */
-  background-size: cover;      /* Ensure the image covers the area */
-  background-position: center;  /* Center the image within the element */
+  background: url(img/Rectangle\ 268.png); 
+  background-size: cover;   
+  background-position: center; 
 
 flex: none;
 order: 0;
@@ -627,11 +615,10 @@ flex-grow: 0;
 .portfolio-image-2 {
   width: 708px;
   height: 320px;
-  background: url(/img/Rectangle\ 269.png); /* Replace with your actual image path */
+  background: url(img/Rectangle\ 269.png); 
   background-size: cover;
   background-position: center;
 
-  /* Inside auto layout */
   flex: none;
   order: 1;
   align-self: stretch;
@@ -640,7 +627,7 @@ flex-grow: 0;
 
 
 
-.portfolio-item {  /* General styling for each accordion item */
+.portfolio-item { 
   width: 708px;
   height: 92px;
 
@@ -648,10 +635,10 @@ flex-grow: 0;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 94.5px; /* or 472% */
+  line-height: 94.5px; 
   color: #FFFFFF;
   letter-spacing: 0px;
-  /* Inside auto layout for portfolio-accordions*/
+  
   flex: none;
   align-self: stretch;
   flex-grow: 0;
@@ -660,23 +647,9 @@ flex-grow: 0;
 .portfolio-item span {
   font-size: 50px;
 }
-/* order for portfolio-accordions
-.portfolio-item-fashion {
-  order: 1; 
-}
 
-.portfolio-item-art{
-  order: 2;  
-}
-.portfolio-item-design{
-  order: 3; 
-}
 
-.portfolio-item-styling {
-  order: 4;  
-}*/
 
-/*EDUCATION SECTION*/
 /*EDUCATION SECTION*/
 .education {
   display: flex;
@@ -860,8 +833,8 @@ border: 2px solid #00042D;
 }
 
 .timeline .ellipse:nth-child(1) { top: 0px; height: 35px;}
-.timeline .ellipse:nth-child(3) { top: 108px; height: 34.04px;} /* Adjust for slightly smaller ellipse */
-.timeline .ellipse:nth-child(5) { top: 244px; height: 34.04px;} /* Adjust for slightly smaller ellipse */
+.timeline .ellipse:nth-child(3) { top: 108px; height: 34.04px;} 
+.timeline .ellipse:nth-child(5) { top: 244px; height: 34.04px;} 
 
 
 .timeline .vector {
@@ -912,7 +885,7 @@ border: 2px solid #00042D;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 78px 80px;  /* Reduced padding to match other sections */
+    padding: 78px 80px; 
     gap: 8px;
 
     position: absolute;
@@ -927,7 +900,7 @@ border: 2px solid #00042D;
 .sckills-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; /*  Probably don't need this, given absolute positioning of parent */
+    justify-content: center;
     align-items: flex-start;
     padding: 0px;
     gap: 40px;
@@ -940,7 +913,7 @@ flex-grow: 0;
 }
 
 .skills h2 {
-    width: 436px;  /*  Could also use max-width here if needed for smaller screens */
+    width: 436px; 
     height: 92px;
 
     font-family: 'Playfair Display';
@@ -951,7 +924,7 @@ flex-grow: 0;
 
     color: #FFFFFF;
 
-    flex: none;  /* Probably unnecessary within flex container, but harmless */
+    flex: none; 
     order: 0;
     flex-grow: 0;
 }
@@ -963,13 +936,13 @@ flex-grow: 0;
     width: 100px;
     height: 2px;
     position: relative;
-    left: -47.5px; /* Adjust based on reduced padding */
-    top: 25px;    /*  Might need slight adjustment depending on final layout */
+    left: -47.5px; 
+    top: 25px;    
 
     background: #FFFFFF;
     transform: rotate(90deg);
 
-    flex: none; /*  Probably unnecessary, but harmless */
+    flex: none; 
     order: 1;
     flex-grow: 0;
 }
@@ -1180,14 +1153,14 @@ font-weight: 700;
 
 .contact-form {
   position: absolute;
-  width: 480.78px; /* Or consider max-width */
+  width: 480.78px; 
   left: 80px;
   top: 700px;
 }
 
 .input-container {
   position: relative;
-  margin-bottom: 45px; /* Increased margin for better spacing */
+  margin-bottom: 45px; 
 }
 
 .input-label {
@@ -1200,7 +1173,7 @@ font-weight: 700;
   letter-spacing: 5px;
   color: rgba(255, 255, 255, 0.7);
   left: 11px;
-  top: 5px;  /*  Start label *slightly* above the input's top */
+  top: 5px;  
   pointer-events: none;
   transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease, letter-spacing 0.2s ease;
   transform-origin: top left;
@@ -1208,7 +1181,7 @@ font-weight: 700;
 
 .input-field {
   width: 100%;
-  height: 35px; /* Slightly increased height */
+  height: 35px; 
   border: none;
   border-bottom: 3px solid #FFFFFF;
   background: transparent;
@@ -1216,7 +1189,7 @@ font-weight: 700;
   color: #FFFFFF;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  padding: 0px 10px;  /* Adjusted padding: top, right, bottom, left */
+  padding: 0px 10px;  
   box-sizing: border-box;
 }
 
@@ -1228,25 +1201,25 @@ font-weight: 700;
 .input-field:focus + .input-label,
 .input-field:not(:placeholder-shown) + .input-label,
 .input-field:not(:empty) + .input-label {
-  transform: translateY(-35px); /* Adjusted translateY */
+  transform: translateY(-35px); 
   font-size: 10px;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.5);
 }
 
 .input-field.message {
-  height: 70px; /* Increased textarea height */
+  height: 70px;
   resize: vertical;
   padding-top: 40px; 
 }
 .input-label.message {
-  top: 40px; /* Adjusted top position */
+  top: 40px; 
 }
 
 .input-field:focus + .input-label.message,
 .input-field:not(:placeholder-shown) + .input-label.message,
 .input-field:not(:empty) + .input-label.message {
-  transform: translateY(-70px); /* Adjusted translateY */
+  transform: translateY(-70px);
   font-size: 10px;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.5);
@@ -1260,24 +1233,24 @@ font-weight: 700;
 
 .submit-button {
   box-sizing: border-box;
-  padding: 16px 40px; /* Padding is fine, keeps text centered */
+  padding: 16px 40px;
   gap: 8px;    
   width: 235px;
   height: 56px;
-  margin-top: 30px;  /* Keep the increased margin */
+  margin-top: 30px;  
   border: 2px solid #FFFFFF;
   background-color: transparent;
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif; /* Added sans-serif fallback */
+  font-family: 'Montserrat', sans-serif; 
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
-  line-height: 1.2;       /* Use line-height: normal OR a unitless value (like 1.2).  This is KEY for single line. */
+  line-height: 1.2;       
   text-align: center;
   letter-spacing: 5px;
   color: #FFFFFF;
-  white-space: nowrap;      /* Prevent text wrapping - VERY IMPORTANT */
-  text-transform: uppercase; /*Added uppercase */
+  white-space: nowrap;     
+  text-transform: uppercase; 
 }
 
 .submit-button:hover {
@@ -1286,8 +1259,7 @@ font-weight: 700;
 
 
 
-/* Rectangle 57 */
-.footer-background { /* Added a class name for clarity */
+.footer-background { 
   position: absolute;
   width: 868px;
   height: 20px;
@@ -1302,7 +1274,7 @@ padding: 78px 80px;
 .footer-icons { 
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /*  Vertically aligns items to the start (top) */
+  align-items: flex-start; 
   padding: 0px;
   gap: 26px;
 
@@ -1318,34 +1290,34 @@ padding: 78px 80px;
   background-size: cover;
   background-position: center;
 }
-.footer-icons > a:nth-child(1) { /* Target the first icon */
+.footer-icons > a:nth-child(1) { 
    width: 22px;
     height: 14px;
 
-  background: url(/img/be.png); /* Replace with your actual image path */
-  background-size: cover;      /* Ensure the image covers the area */
+  background: url(img/be.png); 
+  background-size: cover;      
   background-position: center
 }
 
-.footer-icons > a:nth-child(2) { /* Target the second icon */
+.footer-icons > a:nth-child(2) { 
     width: 19px;
     height: 15px;
-    background: url(/img/twitter.png); /* Replace with your actual image path */
+    background: url(img/twitter.png); 
 }
-.footer-icons > a:nth-child(3) { /* Target the third icon */
+.footer-icons > a:nth-child(3) { 
   width: 9px;
   height: 17px;
-  background: url(/img/facebook.png); /* Replace with your actual image path */
+  background: url(img/facebook.png); 
 }
 
-.footer-icons > a:nth-child(4) { /* Target the fourth icon*/
+.footer-icons > a:nth-child(4) { 
   width: 24px;
   height: 17px;
-  background: url(/img/youtube.png); /* Replace with your actual image path */
+  background: url(img/youtube.png); 
 }
 
-/* © Carlo CIccarelli 2022. */
-.footer-text { /*Added class name*/
+
+.footer-text {
   position: absolute;
   width: 443px;
   height: 40px;
@@ -1357,8 +1329,6 @@ padding: 78px 80px;
   font-weight: 400;
   font-size: 12px;
   line-height: 30px;
-  /* or 250% */
 
-  /* Main Blue */
   color: #00042D;
 }
