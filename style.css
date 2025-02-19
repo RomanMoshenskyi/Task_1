@@ -1,0 +1,1364 @@
+body {
+  position: relative;
+  height: 8500px;
+  background: #E4F2FB;
+}
+
+.menu {
+  position: absolute;
+  width: 46px; /* Initial width - enough for the icon */
+  height: 1105px;  /*  Consider using max-height and overflow-y: auto;  if content might exceed this */
+  top: 114px;
+  left:300px;
+  background-color: transparent; /*  Make the background match the body */
+  transition: width 0.3s ease; /* Smooth transition for width change */
+  overflow: hidden; /* Hide content that overflows when collapsed */
+}
+
+.menu.open {
+  width: 300px; /* Expanded width */
+}
+
+
+.menu-icon {
+  position: absolute; /*  Absolute position within the menu */
+  width: 30px;
+  height: 20px;
+  left: 8px; /* Adjust left position to center icon */
+  cursor: pointer; /* Change cursor to indicate clickability */
+}
+
+.line {
+    
+    height: 4px; /*  Height of the lines */
+    background-color: #052123;
+    margin: 5px 0;  
+    transition: 0.3s; 
+}
+.line1 {
+  width: 25px; /*  Width of the lines */
+}
+.line2 {
+  width: 16.25px;
+}
+.line3 {
+  width: 30px;
+}
+
+/*  Styles for open/close icon animation */
+.menu.open .line1 {
+  transform: rotate(-45deg) translate(-7px, 7px); /* Rotate and position for "X" */
+}
+
+.menu.open .line2 {
+  opacity: 0; /* Hide the middle line */
+}
+
+.menu.open .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);  /* Rotate and position for "X" */
+}
+
+
+.menu-name {
+  position: absolute;
+  width: 180px;
+  height: 31px;
+  top: 150px;
+  left: calc(50% - 15px/2); /* Use calc() to center relative to ICON */
+  font-family: 'Montserrat', sans-serif; /* Add sans-serif as fallback */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: right;
+  letter-spacing: 5px;
+  color: #00042D;
+  transform: rotate(-90deg);
+    white-space: nowrap;  /* Prevent text wrapping */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, left 0.3s ease;  /* Smooth transition for visibility */
+}
+.menu.open .menu-name {
+    left: -67.5px; /* Adjust left position for when menu open*/
+    opacity: 1; /* Fully visible when open */
+}
+
+
+.social-links {
+  position: absolute;
+  width: 559px;
+  height: 46px;
+  left: calc(50% - 180px/2); /* Use calc to center horizontally */
+  top: 730px;
+  font-family: 'Montserrat', sans-serif;  /* Add sans-serif as fallback */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: right;
+  letter-spacing: 5px;
+  color: #00042D;
+  transform: rotate(-90deg);
+  white-space: nowrap; /*  Prevent wrapping to new lines*/
+  opacity: 0;
+  transition: opacity 0.3s ease, left 0.3s ease;  /* Smooth transition*/
+}
+
+.menu.open .social-links{
+    opacity:1;
+    left: -250px; /*Adjust the position when menu opens*/
+}
+
+.social-links a {
+  display: inline-block;
+  color: #00042D;
+  text-decoration: none;
+}
+
+
+
+/*HERO SECTION*/
+.hero {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px 80px;
+gap: 47px;
+isolation: isolate;
+
+position: absolute;
+width: 868px;
+height: 778px;
+left: 375px;
+top: 118px;
+
+background: #00042D;
+
+}
+
+.hero-text {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 16px;
+
+width: 475px;
+height: 388px;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+z-index: 0;
+
+}
+
+.hero h1 {
+  width: 475px;
+  height: 270px;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 90px;
+  line-height: 90px;
+  color: #FFFFFF;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0;
+}
+
+.hero p {
+  width: 510px;
+  height: 102px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: #FFFFFF;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0;
+}
+
+.hero button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 40px;
+  gap: 8px;
+  width: 230px;
+  height: 56px;
+  border: 2px solid #FFFFFF;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+  margin-top: 16px;
+   background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.hero-image {
+
+box-sizing: border-box;
+
+position: absolute;
+width: 418px;
+height: 399px;
+right: -209px;
+top: 133px;
+background: url(.jpg);
+border: 2px solid #FFFFFF;
+
+flex: none;
+order: 2;
+flex-grow: 0;
+z-index: 2;
+}
+
+.hero-image img {
+width: 100%;
+height: 100%;
+object-fit: cover; 
+}
+
+ /*ABOUT SECTION*/
+.about {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 80px;
+gap: 40px;
+
+position: absolute;
+width: 868px;
+height: 640px;
+left: 375px;
+top: 896px;
+
+background: #FFFFFF;
+}
+ 
+ .about h2 {
+width: 178.11px;
+height: 92px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 94.5px;
+
+color: #00042D;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+margin-bottom: 60px;
+}
+ 
+ .section-line-about {
+width: 100px;
+height: 2.25px;
+
+background: #00042D;
+transform: rotate(90deg);
+
+
+flex: none;
+order: 1;
+flex-grow: 0;
+
+margin-left: -48px;  /* Зсуває лінію вліво */
+/* margin-top: 40px; - Додаємо відступ зверху, щоб вирівняти з текстом */
+position: relative; /* Дозволяє використовувати top/left */
+top: -25px;
+
+  
+}
+ 
+ .about p{
+
+  width: 631.27px;  
+  height: 208px;
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  
+  color: #00042D;
+  
+  
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.about .first-line {
+  display: block; /* Розміщує перший рядок на окремому рядку */
+  margin-bottom: 20px; /* Відступ між першим рядком і наступним текстом */
+}
+.about .second-line {
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0px;
+}
+/*SERVICES SECTION*/
+ .services {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+ padding: 0px 80px;
+ gap: 8px;
+ 
+ position: absolute;
+ width: 868px;
+ height: 329px;
+ left: 375px;
+ top: 1536px;
+ 
+ background: #00042D;
+}
+ 
+ .service-item {
+
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 0px;
+ gap: 8px;
+ 
+ margin: 0 auto;
+ width: 109px;
+ height: 138px;
+ 
+ flex: none;
+ order: 0;
+ flex-grow: 0;
+}
+ 
+ .service-name {
+ width: 109px;
+ height: 30px;
+ 
+ font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 16px;
+ line-height: 30px;
+
+ color: #FFFFFF;
+ 
+ 
+ flex: none;
+ order: 1;
+ flex-grow: 0;
+}
+
+ /*EXPERIENCE SECTION*/
+ .experience {
+   
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 78px 80px;
+   width: 868px;
+   gap: 40px;
+   position: absolute;
+   height: 952px;
+   left: 375px;
+   top: 1865px;
+ 
+  
+   background: #FFFFFF;
+
+
+   
+ }
+ 
+ .experience h2 {
+   width: 367.49px;
+   height: 92px;
+   font-family: 'Playfair Display', serif;
+   font-style: normal;
+   font-weight: 400;
+   font-size: 50px;
+   line-height: 94px;
+   color: #00042D;
+   flex: none;
+   order: 0;
+   flex-grow: 0;
+ 
+ }
+ 
+ .rectangle-experience {
+ width: 100px;
+ height: 2.25px;
+ margin-right: 20px; 
+ position: relative;
+ left: -48.5px; 
+ top: -25px;  
+ background: #00042D;
+ transform: rotate(90deg);
+ flex: none;
+ order: 1;
+ flex-grow: 0;
+ 
+ }
+ 
+ .accordion-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+  width: 639px;
+
+  height: 524px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+ 
+ .accordion-item {
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 0px 0px 8px;
+   width: 100%;
+   border-bottom: 2px solid #00042D;
+ }
+ 
+ .accordion-title {
+   /* Title */
+   display: flex;
+   flex-direction: row;
+   align-items: center; /*  Better vertical alignment */
+   justify-content: space-between; /*  Push title and icon to the edges */
+   padding: 0px;
+   width: 100%; /*  Take full width */
+   cursor: pointer; /* Indicate clickability */
+ 
+   
+ }
+ 
+ .accordion-title h3 {
+   /* Team Leader */
+   font-family: 'Montserrat', sans-serif;
+   font-style: normal;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 30px;
+   color: #00042D;
+   margin: 0; /* Remove default h3 margins */
+ 
+  
+ }
+ 
+ .accordion-title span {
+   /* - or + */
+   font-family: 'Montserrat', sans-serif;
+   font-style: normal;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 30px;
+   color: #00042D;
+   margin-left: 10px; /*  Some space between text and icon */
+ }
+ 
+ .accordion-content {
+   /* Description */
+   width: 100%; /* Full width */
+   font-family: 'Montserrat', sans-serif;
+   font-style: normal;
+   font-weight: 400; /*  Changed to 400 for normal text */
+   font-size: 16px;
+   line-height: 30px;
+   color: #00042D;
+   overflow: hidden; /*  Crucial for hiding */
+   max-height: 0;    /*  Initially hidden */
+   transition: max-height 0.3s ease; /* Smooth transition */
+ }
+ 
+ /*  Class to show the content */
+ .accordion-item.active .accordion-content {
+  max-height: 240px;
+  margin-bottom: 5px;
+ /*  Set a reasonable maximum height */
+ }
+ /* Change plus to minus when active */
+ .accordion-item.active .accordion-title span:before {
+ content: "-";
+ }
+ .accordion-title span:before {
+ content:"+";
+ }
+
+ /* Portfolio */
+
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 78px 80px;
+  gap: 40px;
+
+  position: absolute;
+  width: 868px;
+  height: 1348px;
+  left: 375px;
+  top: 2817px;
+
+  background: #00042D;
+}
+
+.portfolio-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 491.49px;
+  height: 192px;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.portfolio-title {
+  width: 491.49px;
+  height: 92px;
+
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 94.5px;
+  letter-spacing: 0px;
+
+  color: #FFFFFF;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.portfolio-separator {
+  width: 100px;
+  height: 2.25px;
+
+  background: #FFFFFF;
+  transform: rotate(90deg);
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  position: relative;
+  
+  left: -48.5px; 
+  flex-grow: 0;
+
+  
+}
+
+.portfolio-accordions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 13px;
+
+  width: 708px;
+  height: 960px;
+  
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.portfolio-images {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin-top: 40px;
+  width: 708px;
+  height: 540px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.portfolio-image-1{
+  width: 708px;
+  height: 220px;
+  
+  
+  background: url(/img/Rectangle\ 268.png); /* Replace with your actual image path */
+  background-size: cover;      /* Ensure the image covers the area */
+  background-position: center;  /* Center the image within the element */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+}
+.portfolio-image-2 {
+  width: 708px;
+  height: 320px;
+  background: url(/img/Rectangle\ 269.png); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;  
+}
+
+
+
+.portfolio-item {  /* General styling for each accordion item */
+  width: 708px;
+  height: 92px;
+
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 94.5px; /* or 472% */
+  color: #FFFFFF;
+  letter-spacing: 0px;
+  /* Inside auto layout for portfolio-accordions*/
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.portfolio-item span {
+  font-size: 50px;
+}
+/* order for portfolio-accordions
+.portfolio-item-fashion {
+  order: 1; 
+}
+
+.portfolio-item-art{
+  order: 2;  
+}
+.portfolio-item-design{
+  order: 3; 
+}
+
+.portfolio-item-styling {
+  order: 4;  
+}*/
+
+/*EDUCATION SECTION*/
+/*EDUCATION SECTION*/
+.education {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 78px 80px;
+  gap: 115px;
+
+  position: absolute;
+  width: 868px;
+  height: 1207px;
+  left: 375px;
+  top: 4165px;
+
+  background: #FFFFFF;
+}
+
+.title-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 40px;
+
+  width: 631.27px;
+  height: 480px;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.education-title {
+width: 367.49px;
+height: 92px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 94.5px;
+letter-spacing: 0px;
+
+color: #00042D;
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.rectangle-141 {
+  position: relative;
+  left: -47.5px;
+  width: 100px;
+  top: -15px;
+  height: 2px;
+
+  background: #00042D;
+  transform: rotate(90deg);
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.education-description {
+  width: 631.27px;
+  height: 208px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #00042D;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+}
+.education-description .first-line {
+  display: block;
+  margin-bottom: 40px;
+}
+.education-description .second-line {
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+
+
+.timeline {
+  position: relative;
+  width: 558px;
+  height: 456px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.years {
+  position: absolute;
+  width: 73.27px;
+  height: 396px;
+  left: 0px;
+  top: 0px;
+}
+
+.years .year{
+  position: absolute;
+  width: 73.27px;
+  height: 28px;
+  left: 0px;
+  letter-spacing: 0px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 30px;
+  color: #00042D;
+}
+
+.year:nth-child(1){
+  top: 0px;
+}
+.year:nth-child(2){
+  top: 109.5px;
+}
+.year:nth-child(3){
+  top: 242px;
+}
+.year:nth-child(4){
+  top: 368px;
+}
+
+
+.timeline-visual{
+    position: absolute;
+    width: 35px;
+    height: 400.04px;
+    left: 80.04px;
+    top: 0px;
+}
+
+.timeline .ellipse {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 35px;
+  left: 0px;
+  top: 0px;
+
+  border: 2px solid #00042D;
+  border-radius: 50%;
+}
+
+.timeline .ellipse.filled {
+box-sizing: border-box;
+
+position: absolute;
+width: 35px;
+height: 34.04px;
+left: 0px;
+top: 366px;
+
+border: 2px solid #00042D;
+}
+.timeline .ellipse.filled.smaller{
+    content: "";
+    position: absolute;
+    width: 19px;
+    height: 18.48px;
+    left: 8px;
+    top: 374px;
+    border-radius: 50%;
+    background-color: #00042D;
+    box-sizing: border-box;
+    border: 2px solid #00042D;
+}
+
+.timeline .ellipse:nth-child(1) { top: 0px; height: 35px;}
+.timeline .ellipse:nth-child(3) { top: 108px; height: 34.04px;} /* Adjust for slightly smaller ellipse */
+.timeline .ellipse:nth-child(5) { top: 244px; height: 34.04px;} /* Adjust for slightly smaller ellipse */
+
+
+.timeline .vector {
+  position: absolute;
+  width: 0px;
+  left: 17.5px;
+  border: 2px solid #00042D;
+}
+
+.timeline .vector:nth-child(2) { top: 45px; height: 53px;}
+.timeline .vector:nth-child(4) { top: 155px; height: 73px; }
+.timeline .vector:nth-child(6) { top: 297.5px; height: 53px;}
+
+.timeline-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+
+  position: absolute;
+  width: 385.53px;
+  height: 456px;
+  left: 172.47px;
+  top: 0px;
+}
+
+.timeline-text p {
+  width: 385.53px;
+  height: 90px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  margin-top: 0;
+  margin-bottom: 0.1em;
+  color: #00042D;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
+/* Skills Section */
+.skills {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 78px 80px;  /* Reduced padding to match other sections */
+    gap: 8px;
+
+    position: absolute;
+    width: 868px;
+    height: 702px;
+    left: 375px;
+    top: 5372px;
+  
+    background: #00042D;
+}
+
+.sckills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*  Probably don't need this, given absolute positioning of parent */
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+
+    width: 485px; 
+    height: 562px;
+    flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.skills h2 {
+    width: 436px;  /*  Could also use max-width here if needed for smaller screens */
+    height: 92px;
+
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 94px;
+
+    color: #FFFFFF;
+
+    flex: none;  /* Probably unnecessary within flex container, but harmless */
+    order: 0;
+    flex-grow: 0;
+}
+.skills-group{
+  margin-top: 100px;
+}
+
+.rectangle-143 {
+    width: 100px;
+    height: 2px;
+    position: relative;
+    left: -47.5px; /* Adjust based on reduced padding */
+    top: 25px;    /*  Might need slight adjustment depending on final layout */
+
+    background: #FFFFFF;
+    transform: rotate(90deg);
+
+    flex: none; /*  Probably unnecessary, but harmless */
+    order: 1;
+    flex-grow: 0;
+}
+
+.frame-2 {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 106px 80px;
+gap: 8px;
+
+position: absolute;
+width: 868px;
+height: 914px;
+left: 375px;
+top: 6074px;
+
+background: #FFFFFF;
+
+}
+.frame-1 {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 40px;
+
+width: 631.27px;
+height: 702px;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.cover-letter-title {
+width: 281px;
+height: 61px;
+
+font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 60px;
+
+color: #00042D;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.rectangle-149 {
+width: 100px;
+height: 2.25px;
+left: -47.5px;
+
+
+background: #00042D;
+transform: rotate(90deg);
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+position: relative;
+top: 25px;    
+}
+
+.cover-letter-text {
+width: 631.27px;
+height: 461px;
+margin-top: 100px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 30px;
+letter-spacing: 0px;
+
+color: #00042D;
+
+flex: none;
+order: 2;
+flex-grow: 0;
+
+}
+
+.cover-letter-text .first-line {
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.cover-letter-text .second-line {
+  display: block;
+}
+.cover-letter-text .third-line {
+  display: block;
+  top: 40px;
+}
+
+
+.contact-section {
+  position: absolute;
+  padding: 78px 80px;
+  width: 868px;
+  height: 1064px;
+  left: 375px;
+  top: 7110px;
+  background: #00042D;
+  }
+  .frame-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 40px;
+  
+  position: absolute;
+  width: 499.38px;
+  height: 552px;
+  left: 80px;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  
+  }
+  
+  .frame-3 h2 {
+  width: 367.49px;
+  height: 92px;
+  
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 94.5px;
+  
+  
+  color: #FFFFFF;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  
+  }
+  
+  .rectangle-151 {
+    width: 100px;
+    height: 2.25px;
+    left: -47.5px;
+    
+    
+    background: #FFFFFF;
+    transform: rotate(90deg);
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    
+    
+    position: relative;
+  
+  }
+  
+  .contact-text{
+width: 499.38px;
+height: 280px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 30px;
+letter-spacing: 0px;
+
+
+color: #FFFFFF;
+
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+.contact-text .first-line{
+  font-weight: 600;
+  font-size: 20px;
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.cover-letter-text .second-line {
+  display: block;
+  margin-bottom: 40px;
+}
+.contact-text .third-line {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.contact-text .email-website{
+font-weight: 700;
+}
+
+
+
+.contact-form {
+  position: absolute;
+  width: 480.78px; /* Or consider max-width */
+  left: 80px;
+  top: 700px;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 45px; /* Increased margin for better spacing */
+}
+
+.input-label {
+  position: absolute;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  left: 11px;
+  top: 5px;  /*  Start label *slightly* above the input's top */
+  pointer-events: none;
+  transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease, letter-spacing 0.2s ease;
+  transform-origin: top left;
+}
+
+.input-field {
+  width: 100%;
+  height: 35px; /* Slightly increased height */
+  border: none;
+  border-bottom: 3px solid #FFFFFF;
+  background: transparent;
+  outline: none;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 0px 10px;  /* Adjusted padding: top, right, bottom, left */
+  box-sizing: border-box;
+}
+
+
+.input-field::placeholder {
+  color: transparent;
+}
+
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label,
+.input-field:not(:empty) + .input-label {
+  transform: translateY(-35px); /* Adjusted translateY */
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-field.message {
+  height: 70px; /* Increased textarea height */
+  resize: vertical;
+  padding-top: 40px; 
+}
+.input-label.message {
+  top: 40px; /* Adjusted top position */
+}
+
+.input-field:focus + .input-label.message,
+.input-field:not(:placeholder-shown) + .input-label.message,
+.input-field:not(:empty) + .input-label.message {
+  transform: translateY(-70px); /* Adjusted translateY */
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.input-field:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.8);
+}
+
+.submit-button {
+  box-sizing: border-box;
+  padding: 16px 40px; /* Padding is fine, keeps text centered */
+  gap: 8px;    
+  width: 235px;
+  height: 56px;
+  margin-top: 30px;  /* Keep the increased margin */
+  border: 2px solid #FFFFFF;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif; /* Added sans-serif fallback */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;       /* Use line-height: normal OR a unitless value (like 1.2).  This is KEY for single line. */
+  text-align: center;
+  letter-spacing: 5px;
+  color: #FFFFFF;
+  white-space: nowrap;      /* Prevent text wrapping - VERY IMPORTANT */
+  text-transform: uppercase; /*Added uppercase */
+}
+
+.submit-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* Rectangle 57 */
+.footer-background { /* Added a class name for clarity */
+  position: absolute;
+  width: 868px;
+  height: 20px;
+  left: 375px;
+padding: 78px 80px;
+  top: 8300px;
+  background: #FFFFFF;
+}
+
+
+
+.footer-icons { 
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /*  Vertically aligns items to the start (top) */
+  padding: 0px;
+  gap: 26px;
+
+  position: absolute;
+  width: 152px;
+  height: 17px;
+  left: 490px;
+  top: 8370px;
+}
+
+.footer-icons a {
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+.footer-icons > a:nth-child(1) { /* Target the first icon */
+   width: 22px;
+    height: 14px;
+
+  background: url(/img/be.png); /* Replace with your actual image path */
+  background-size: cover;      /* Ensure the image covers the area */
+  background-position: center
+}
+
+.footer-icons > a:nth-child(2) { /* Target the second icon */
+    width: 19px;
+    height: 15px;
+    background: url(/img/twitter.png); /* Replace with your actual image path */
+}
+.footer-icons > a:nth-child(3) { /* Target the third icon */
+  width: 9px;
+  height: 17px;
+  background: url(/img/facebook.png); /* Replace with your actual image path */
+}
+
+.footer-icons > a:nth-child(4) { /* Target the fourth icon*/
+  width: 24px;
+  height: 17px;
+  background: url(/img/youtube.png); /* Replace with your actual image path */
+}
+
+/* © Carlo CIccarelli 2022. */
+.footer-text { /*Added class name*/
+  position: absolute;
+  width: 443px;
+  height: 40px;
+  left: 489px;
+  top: 8410px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  /* or 250% */
+
+  /* Main Blue */
+  color: #00042D;
+}

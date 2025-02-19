@@ -1,0 +1,234 @@
+body {
+ 
+ position: relative;
+ background: #E4F2FB;
+ overflow: hidden;
+ }
+ 
+ .menu {
+  position: absolute;
+  width: 46px; /* Initial width - enough for the icon */
+  height: 1105px;  /*  Consider using max-height and overflow-y: auto;  if content might exceed this */
+  top: 30px;
+  left:200px;
+  background-color: transparent; /*  Make the background match the body */
+  transition: width 0.3s ease; /* Smooth transition for width change */
+  overflow: hidden; /* Hide content that overflows when collapsed */
+}
+
+.menu.open {
+  width: 300px; /* Expanded width */
+}
+
+
+.menu-icon {
+  position: absolute; /*  Absolute position within the menu */
+  width: 30px;
+  height: 20px;
+  left: 8px; /* Adjust left position to center icon */
+  cursor: pointer; /* Change cursor to indicate clickability */
+}
+
+.line {
+    
+    height: 4px; /*  Height of the lines */
+    background-color: #052123;
+    margin: 5px 0;  
+    transition: 0.3s; 
+}
+.line1 {
+  width: 25px; /*  Width of the lines */
+}
+.line2 {
+  width: 16.25px;
+}
+.line3 {
+  width: 30px;
+}
+
+/*  Styles for open/close icon animation */
+.menu.open .line1 {
+  transform: rotate(-45deg) translate(-7px, 7px); /* Rotate and position for "X" */
+}
+
+.menu.open .line2 {
+  opacity: 0; /* Hide the middle line */
+}
+
+.menu.open .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);  /* Rotate and position for "X" */
+}
+
+
+.menu-name {
+  position: absolute;
+  width: 180px;
+  height: 31px;
+  top: 150px;
+  left: calc(50% - 15px/2); /* Use calc() to center relative to ICON */
+  font-family: 'Montserrat', sans-serif; /* Add sans-serif as fallback */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: right;
+  letter-spacing: 5px;
+  color: #00042D;
+  transform: rotate(-90deg);
+    white-space: nowrap;  /* Prevent text wrapping */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, left 0.3s ease;  /* Smooth transition for visibility */
+}
+.menu.open .menu-name {
+    left: -67.5px; /* Adjust left position for when menu open*/
+    opacity: 1; /* Fully visible when open */
+}
+
+
+.social-links {
+  position: absolute;
+  width: 559px;
+  height: 46px;
+  left: calc(50% - 180px/2); /* Use calc to center horizontally */
+  top: 530px;
+  font-family: 'Montserrat', sans-serif;  /* Add sans-serif as fallback */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: right;
+  letter-spacing: 5px;
+  color: #00042D;
+  transform: rotate(-90deg);
+  white-space: nowrap; /*  Prevent wrapping to new lines*/
+  opacity: 0;
+  transition: opacity 0.3s ease, left 0.3s ease;  /* Smooth transition*/
+}
+
+.menu.open .social-links{
+    opacity:1;
+    left: -250px; /*Adjust the position when menu opens*/
+}
+
+.social-links a {
+  display: inline-block;
+  color: #00042D;
+  text-decoration: none;
+}
+
+ 
+ 
+ 
+ /*HERO SECTION*/
+ .hero {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: flex-start;
+ padding: 0px 80px;
+ gap: 47px;
+ isolation: isolate;
+ 
+ position: absolute;
+ width: 1088px;
+ height: 878px;
+ left: 275px;
+ top: 30px;
+ border-radius: 15px;
+ background: #00042D;
+ 
+ }
+ 
+ .hero-text {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ padding: 0px;
+ gap: 16px;
+ 
+ width: 475px;
+ height: 388px;
+ 
+ flex: none;
+ order: 0;
+ flex-grow: 0;
+ z-index: 0;
+ 
+ }
+ 
+ .hero h1 {
+   width: 475px;
+   height: 270px;
+   font-family: 'Playfair Display';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 90px;
+   line-height: 90px;
+   color: #FFFFFF;
+   flex: none;
+   order: 0;
+   align-self: stretch;
+   flex-grow: 0;
+   margin: 0;
+ }
+ 
+ .hero p {
+   width: 510px;
+   height: 102px;
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 32px;
+   color: #FFFFFF;
+   flex: none;
+   order: 1;
+   flex-grow: 0;
+   margin: 0;
+ }
+ 
+ .hero button {
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   padding: 16px 40px;
+   gap: 8px;
+   width: 230px;
+   height: 56px;
+   border: 2px solid #FFFFFF;
+   flex: none;
+   order: 1;
+   flex-grow: 0;
+   z-index: 1;
+   margin-top: 16px;
+    background-color: transparent;
+   color: white;
+   cursor: pointer;
+   border-radius: 15px;
+ }
+ 
+ .hero-image {
+ 
+ box-sizing: border-box;
+ 
+ position: absolute;
+ width: 418px;
+ height: 399px;
+ right: -209px;
+ top: 133px;
+ background: url(.jpg);
+ border: 2px solid #FFFFFF;
+ 
+ flex: none;
+ order: 2;
+ flex-grow: 0;
+ z-index: 2;
+ }
+ 
+ .hero-image img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover; 
+ }
